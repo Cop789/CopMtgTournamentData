@@ -53,6 +53,7 @@ match_df, player_df = load_all_data()
 
 # Keep tournaments in the order they appear
 tournament_ordered = match_df["TournamentName"].drop_duplicates().tolist()
+tournament_ordered.reverse()
 
 tournament = st.selectbox(
     "Select Tournament",
