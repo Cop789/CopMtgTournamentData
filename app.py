@@ -50,9 +50,13 @@ match_df, player_df = load_all_data()
 # -------------------------
 # TOURNAMENT SELECTION
 # -------------------------
+
+# Keep tournaments in the order they appear
+tournament_ordered = match_df["TournamentName"].drop_duplicates().tolist()
+
 tournament = st.selectbox(
     "Select Tournament",
-    sorted(match_df["TournamentName"].unique())
+    tournament_ordered
 )
 
 filtered_matches = match_df[match_df["TournamentName"] == tournament].copy()
