@@ -223,11 +223,11 @@ st.dataframe(top_winrate_df, hide_index=True)
 # -------------------------
 # WINRATE HEATMAP WITH MULTIPLE METRICS
 # -------------------------
-st.subheader("Top 10 Decks Matchups(Wins / Matches / Winrate %)")
+st.subheader("Top 15 Decks Matchups(Wins / Matches / Winrate %)")
 
 # Top 10 decks by popularity, change head number to adjust how many decks to show in heatmap
 deck_counts = filtered_players['Deck'].value_counts()
-top_decks = deck_counts.head(10).index.tolist()
+top_decks = deck_counts.head(15).index.tolist()
 
 # Filter matches to top decks
 heatmap_matches = filtered_matches[
