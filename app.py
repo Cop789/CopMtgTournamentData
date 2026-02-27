@@ -188,7 +188,6 @@ deck_stats = filtered_players.groupby("Deck").agg(
     LowestFinish=("Rank", "max"),
 ).reset_index()
 
-deck_stats["AverageFinalRank"] = deck_stats["AverageFinalRank"].round(0).astype(int)
 deck_stats = deck_stats.merge(round10_df, on="Deck", how="left")
 deck_stats["Day 2"] = deck_stats["Day 2"].fillna(0).round(2)
 deck_stats["Day 2 %"] = (deck_stats["Day 2"] / deck_stats["NumPlayers"] * 100).round(1)
