@@ -183,7 +183,6 @@ round10_df = pd.DataFrame(round10_counts)
 
 deck_stats = filtered_players.groupby("Deck").agg(
     NumPlayers=("Deck", "count"),
-    AverageFinalRank=("Rank", "mean"),
     HighestFinish=("Rank", "min"),
     LowestFinish=("Rank", "max"),
 ).reset_index()
