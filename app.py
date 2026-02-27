@@ -275,7 +275,5 @@ sns.heatmap(winrate.loc[top_decks, top_decks],
             cbar_kws={'label':'Winrate (%)'}
             )
 
-plt.xlabel("Losing Deck", fontsize=12)
-plt.ylabel("Winning Deck", fontsize=12)
 plt.title("Deck vs Deck (Wins / Matches / Winrate %)")
 st.pyplot(plt)
